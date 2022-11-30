@@ -49,3 +49,8 @@ ul {
 .game-info {
   margin-left: 20px;
 }
+
+.history:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}
