@@ -109,7 +109,7 @@ class Game extends React.Component {
         : "go to game start";
       return (
         <li key={move}>
-          <button className="history" onClick={() => this.jumpTo(move)}>
+          <button className="history-btn glass-bg" onClick={() => this.jumpTo(move)}>
             {desc}
           </button>
         </li>
@@ -136,10 +136,10 @@ class Game extends React.Component {
             winner={winner && winner.winningSquares}
           />
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{ascending ? moves : moves.reverse()}</ol>
-          <button onClick={() => this.handleSort()}>sort</button>
+        <div className="game-info glass-bg">
+          <h1 className="status">{status}</h1>
+          <ol className="history-list">{ascending ? moves : moves.reverse()}</ol>
+          <button className="sort glass-bg" onClick={() => this.handleSort()}>sort</button>
         </div>
       </div>
     );
