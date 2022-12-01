@@ -43,7 +43,7 @@ class Board extends React.Component {
     for (let r = 0; r < totalRows; r++) {
       rows.push(this.renderRow(r));
     }
-    return <div>{rows}</div>;
+    return <div className="play-area">{rows}</div>;
   }
 }
 
@@ -139,7 +139,7 @@ class Game extends React.Component {
         <div className="game-info glass-bg">
           <h1 className="status">{status}</h1>
           <ol className="history-list">{ascending ? moves : moves.reverse()}</ol>
-          <button className="sort glass-bg" onClick={() => this.handleSort()}>sort</button>
+          <button className="sort glass-bg" onClick={() => this.handleSort()}>sort by {ascending ? 'descending' : 'ascending'}</button>
         </div>
       </div>
     );
