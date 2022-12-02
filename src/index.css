@@ -91,7 +91,10 @@ button.sort {
 }
 
 @media screen and (max-width: 900px) {
-  .game-board, .game-info {width: 50%;}
+  .game-board,
+  .game-info {
+    width: 50%;
+  }
 
   .square {
     width: 70px;
@@ -100,9 +103,22 @@ button.sort {
 }
 
 @media screen and (max-width: 720px) {
-  .game {flex-direction: column;}
-  .game-board, .game-info {width: 100%; height: auto; text-align: center;}
-  .history-list li {margin-left: -50px;}
-  .history-btn {width: max-content;}
-  .play-area {margin: 40px auto 0;}
+  .game {
+    flex-direction: column;
+  }
+  .game-board,
+  .game-info {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .history-list li {
+    margin-left: -50px;
+  }
+  .history-btn {
+    width: max-content;
+  }
+  .play-area {
+    margin: 40px auto 0;
+  }
 }
