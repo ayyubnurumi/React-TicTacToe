@@ -3,20 +3,16 @@
 }
 
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: 14px "Digi Grotesk", monospace, sans-serif;
   margin: 0;
 }
 
-.glass-bg {
-  background: linear-gradient(
-    135deg,
-    rgba(225, 225, 225, 0.25),
-    rgba(225, 225, 225, 0.1)
-  );
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border: 1px solid rgba(225, 225, 225, 0.18);
+.primary-btn {
+  background-color: #282828;
+  border-color: #33ff33;
+  color: #33ff33;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 .game {
@@ -24,8 +20,8 @@ body {
   flex-direction: row;
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
-  background-color: black;
+  min-height: 100vh;
+  background-color: #282828;
 }
 
 .game-board {
@@ -33,7 +29,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 
 .play-area {
@@ -48,20 +44,18 @@ body {
 
 .square {
   float: left;
-  font-size: 24px;
+  font-size: 4em;
   font-weight: bold;
-  line-height: 34px;
   height: 100px;
   width: 100px;
-  margin: -1px;
+  margin: 0;
   padding: 0;
   text-align: center;
 }
 
 .game-info {
   width: 40%;
-  height: 90%;
-  margin: 30px 30px 30px auto;
+  margin: 0;
   display: block;
   border-radius: 30px;
   box-sizing: border-box;
@@ -69,34 +63,46 @@ body {
 
 .status {
   margin: 40px;
-  color: white;
+  color: #33ff33;
   font-size: 24px;
   font-weight: bolder;
 }
 
 .history-list li {
-  list-style: none;
-  text-align: left;
+  list-style: none inside;
 }
 
 .history-btn {
-  width: 50%;
+  width: 70%;
+  margin: 1px;
   text-align: left;
-  border-radius: 3px;
-  padding: 5px;
-  color: white;
+  border-radius: 5px;
   font-size: 14;
   font-weight: 100;
 }
 
 .history-btn:hover {
-  cursor: pointer;
   font-weight: bolder;
 }
 
 button.sort {
   margin: 40px;
-  color: white;
   border-radius: 5px;
-  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .game-board, .game-info {width: 50%;}
+
+  .square {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .game {flex-direction: column;}
+  .game-board, .game-info {width: 100%; height: auto; text-align: center;}
+  .history-list li {margin-left: -50px;}
+  .history-btn {width: max-content;}
+  .play-area {margin: 40px auto 0;}
 }

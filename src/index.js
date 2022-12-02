@@ -4,12 +4,12 @@ import "./index.css";
 
 function Square(props) {
   const winningSquareStyle = {
-    backgroundColor: 'rgb(68, 197, 51)',
-    border: '1px solid #000'
+    backgroundColor: '#33ff33',
+    color: '#282828',
   };
 
   return (
-    <button className="square" onClick={props.onClick} style={props.winningSquare ? winningSquareStyle : null} >
+    <button className="square primary-btn" onClick={props.onClick} style={props.winningSquare ? winningSquareStyle : null} >
       {props.value}
     </button>
   );
@@ -109,7 +109,7 @@ class Game extends React.Component {
         : "go to game start";
       return (
         <li key={move}>
-          <button className="history-btn glass-bg" onClick={() => this.jumpTo(move)}>
+          <button className="history-btn primary-btn" onClick={() => this.jumpTo(move)}>
             {desc}
           </button>
         </li>
@@ -136,10 +136,10 @@ class Game extends React.Component {
             winner={winner && winner.winningSquares}
           />
         </div>
-        <div className="game-info glass-bg">
+        <div className="game-info">
           <h1 className="status">{status}</h1>
           <ol className="history-list">{ascending ? moves : moves.reverse()}</ol>
-          <button className="sort glass-bg" onClick={() => this.handleSort()}>sort by {ascending ? 'descending' : 'ascending'}</button>
+          <button className="sort primary-btn" onClick={() => this.handleSort()}>sort by <strong>{ascending ? 'Descending' : 'Ascending'}</strong></button>
         </div>
       </div>
     );
