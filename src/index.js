@@ -25,6 +25,7 @@ class Board extends React.Component {
       this.props.winner && this.props.winner.includes(i) ? true : false;
     return (
       <Square
+        key={i}
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
         winningSquare={winningSquare}
@@ -39,7 +40,7 @@ class Board extends React.Component {
     for (let s = 0; s < squaresPerRow; s++) {
       squares.push(this.renderSquare(offset + s));
     }
-    return <div className="board-row">{squares}</div>;
+    return <div key={row} className="board-row">{squares}</div>;
   }
 
   render() {

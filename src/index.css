@@ -29,11 +29,11 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .play-area {
-  margin: auto 0;
+  margin: 75px 0;
 }
 
 .board-row:after {
