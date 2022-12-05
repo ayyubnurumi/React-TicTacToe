@@ -1,6 +1,6 @@
 # tic tac toe
 
-This project was created by following [tutorial](https://reactjs.org/tutorial/tutorial.html) from [reactjs.org](https://reactjs.org/).
+This project was created by following a [tutorial](https://reactjs.org/tutorial/tutorial.html) from [reactjs.org](https://reactjs.org/).
 
 ## extension
 
