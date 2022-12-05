@@ -4,12 +4,16 @@ import "./index.css";
 
 function Square(props) {
   const winningSquareStyle = {
-    backgroundColor: '#33ff33',
-    color: '#282828',
+    backgroundColor: "#33ff33",
+    color: "#282828",
   };
 
   return (
-    <button className="square primary-btn" onClick={props.onClick} style={props.winningSquare ? winningSquareStyle : null} >
+    <button
+      className="square primary-btn"
+      onClick={props.onClick}
+      style={props.winningSquare ? winningSquareStyle : null}
+    >
       {props.value}
     </button>
   );
@@ -17,12 +21,13 @@ function Square(props) {
 
 class Board extends React.Component {
   renderSquare(i) {
-    let winningSquare = this.props.winner && this.props.winner.includes(i) ? true : false;
+    let winningSquare =
+      this.props.winner && this.props.winner.includes(i) ? true : false;
     return (
       <Square
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
-        winningSquare = {winningSquare}
+        winningSquare={winningSquare}
       />
     );
   }
@@ -109,7 +114,10 @@ class Game extends React.Component {
         : "go to game start";
       return (
         <li key={move}>
-          <button className="history-btn primary-btn" onClick={() => this.jumpTo(move)}>
+          <button
+            className="history-btn primary-btn"
+            onClick={() => this.jumpTo(move)}
+          >
             {desc}
           </button>
         </li>
@@ -119,8 +127,8 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = "The Winner is " + winner.winner;
-    } else if(!current.squares.includes(null)) {
-      status = "draw"
+    } else if (!current.squares.includes(null)) {
+      status = "draw";
     } else {
       status = "Next player is " + (this.state.xIsNext ? "X" : "O");
     }
@@ -138,8 +146,15 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <h1 className="status">{status}</h1>
-          <ol className="history-list">{ascending ? moves : moves.reverse()}</ol>
-          <button className="sort primary-btn" onClick={() => this.handleSort()}>sort by <strong>{ascending ? 'Descending' : 'Ascending'}</strong></button>
+          <ol className="history-list">
+            {ascending ? moves : moves.reverse()}
+          </ol>
+          <button
+            className="sort primary-btn"
+            onClick={() => this.handleSort()}
+          >
+            sort by <strong>{ascending ? "Descending" : "Ascending"}</strong>
+          </button>
         </div>
       </div>
     );
@@ -167,7 +182,8 @@ function calculateWinner(squares) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return {
         winner: squares[a],
-      winningSquares:lines[i]};
+        winningSquares: lines[i],
+      };
     }
   }
   return null;
