@@ -147,15 +147,15 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <h1 className="status">{status}</h1>
-          <ol className="history-list">
-            {ascending ? moves : moves.reverse()}
-          </ol>
           <button
             className="sort primary-btn"
             onClick={() => this.handleSort()}
           >
             sort by <strong>{ascending ? "Descending" : "Ascending"}</strong>
           </button>
+          <ol className="history-list">
+            {ascending ? moves : moves.reverse()}
+          </ol>
         </div>
       </div>
     );

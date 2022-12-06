@@ -29,7 +29,6 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .play-area {
@@ -62,7 +61,7 @@ body {
 }
 
 .status {
-  margin: 40px;
+  margin: 40px 40px 10px;
   color: #33ff33;
   font-size: 24px;
   font-weight: bolder;
@@ -86,7 +85,7 @@ body {
 }
 
 button.sort {
-  margin: 40px;
+  margin: 10px 40px;
   border-radius: 5px;
 }
 
